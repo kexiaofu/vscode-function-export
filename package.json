@@ -1,0 +1,59 @@
+{
+	"name": "function-export",
+	"displayName": "function-export",
+	"description": "for export function name",
+  "version": "0.0.1",
+  "repository": "https://github.com/kexiaofu/vscode-function-export.git",
+  "publisher": "liangjf822",
+	"engines": {
+		"vscode": "^1.52.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onView:functionExport"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"views": {
+			"explorer": [
+				{
+					"id": "functionExport",
+					"name": "Function Export",
+					"icon": "resources/function.svg"
+				}
+			]
+		},
+		"commands": [
+			{
+				"command": "functionExportTreeView.refresh",
+				"title": "Function Export TreeView Refresh"
+			},
+			{
+				"command": "functionExport.jumpToLine",
+				"title": "Function Export Jump To Line"
+			}
+		]
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "yarn run lint",
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.0.4",
+		"@types/node": "^12.11.7",
+		"@types/vscode": "^1.52.0",
+		"eslint": "^7.15.0",
+		"glob": "^7.1.6",
+		"mocha": "^8.1.3",
+		"typescript": "^4.1.2",
+		"vscode-test": "^1.4.1"
+	},
+	"dependencies": {
+		"@babel/core": "^7.12.10",
+		"function-name-export": "^1.0.0"
+	}
+}
